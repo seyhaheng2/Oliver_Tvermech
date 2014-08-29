@@ -1,0 +1,11 @@
+HTTrack3.48-14 launched on Thu, 28 Aug 2014 19:02:11 at http://nuvuthemes.com/extensions/scrollto-menu/
+(winhttrack http://nuvuthemes.com/extensions/scrollto-menu/ -O "http://nuvuthemes.com/extensions/scrollto-menu/scrolltomenufixed" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+19:02:18	Warning: 	Moved Permanently for nuvuthemes.com/extensions/scrollto-menu/
+19:02:18	Warning: 	File has moved from nuvuthemes.com/extensions/scrollto-menu/ to http://www.nuvuthemes.com/product/scrollto-menu/
+19:02:18	Warning: 	No data seems to have been transferred during this session! : restoring previous one!

@@ -1,0 +1,23 @@
+.page-header
+  = link_to new_course_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Category
+        %th
+        %th
+        %th
+
+    %tbody
+      - @courses.each do |course|
+        %tr
+          %td= course.name
+          %td= course.category.name
+          %td= link_to 'Show', course
+          %td= link_to 'Edit', edit_course_path(course)
+          %td= link_to 'Destroy', course, :data => { confirm: 'Are you sure?' }, :method => :delete

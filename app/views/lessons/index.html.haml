@@ -1,0 +1,32 @@
+.page-header
+  = link_to new_lesson_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Image
+        %th Video
+        %th Duration
+        %th Description
+        %th Course
+        %th User
+        %th
+        %th
+        %th
+
+    %tbody
+      - @lessons.each do |lesson|
+        %tr
+          %td= lesson.name
+          %td= lesson.image
+          %td= lesson.video
+          %td= lesson.duration
+          %td= lesson.description
+          %td= lesson.course
+          %td= lesson.user
+          %td= link_to 'Show', lesson
+          %td= link_to 'Edit', edit_lesson_path(lesson)
+          %td= link_to 'Destroy', lesson, :data => { confirm: 'Are you sure?' }, :method => :delete

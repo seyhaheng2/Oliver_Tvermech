@@ -1,0 +1,108 @@
+ <div class="container_wrap fullsize">
+      <div class="menu-search">
+        
+      </div>
+      <div class="template-page content twelve alpha units">
+          <div class="post-entry">
+              <div class="entry-content"> 
+                      <script type="text/javascript">
+                          var jQuery = jQuery.noConflict();
+                          jQuery(document).ready(function(){
+
+                          //set width and heights based on dynamic sizes
+                          });
+                      </script>
+                      <style>
+                          .refolioimg{
+                            width:335px!important;
+                           height:272px!important;
+
+                          }
+                          .refolioimg.ref-small{
+                            width:200px!important;
+                           height:190px!important;
+
+                          }
+                          .refolioimg.ref-medium{
+                            width:335px!important;
+                           height:272px!important;
+
+                          }
+                          .refolioimg.ref-large{
+                            width:400px!important;
+                           height:340px!important;
+
+                          }
+                          .ref-active {
+                              z-index:9999!important;
+                             margin-top:-70px!important;
+                             width:375px!important;
+                              margin-left:-20px!important;
+                                height:670px!important;
+                              }
+                          .ref-active.ref-small {
+                              z-index:9999!important;
+                             margin-top:-70px!important;
+                             width:240px!important;
+                              margin-left:-20px!important;
+                                height:400px!important;
+                              }
+                              .ref-active.ref-medium {
+                              z-index:9999!important;
+                             margin-top:-70px!important;
+                             width:375px!important;
+                              margin-left:-20px!important;
+                                height:670px!important;
+                              }
+                              .ref-active.ref-large {
+                              z-index:9999!important;
+                             margin-top:-70px!important;
+                             width:440px!important;
+                              margin-left:-20px!important;
+                                height:800px!important;
+                              }
+                           .refvotes{
+
+                           }
+                      </style>
+
+                      <div class="refoliogallery isotope">
+                          <% @les.each do |l| %>
+                              <!-- start li container each post returned-->
+                              <div class="refolioimg refolioimage logos isotope-item" id="demo1" style="transform: translate3d(0px, 0px, 0px);display:inline-block;">
+                                                  <!-- refolio img wrap-->
+                                  <div class="refolioimgwrap" style="background:url(<%= image_path(l.image)%>);width=70%; height=200px;display:inline-block;">
+                                  </div>                             
+                                  <div class="refoliosumm">
+                                      <div class="ref-date"><i class="fa fa-calendar"></i>  July 27, 2014</div>
+                                      <div class="ref-author"><i class="fa fa-user"></i>  admin</div>
+                                      <h2><%= link_to l.name, class: "green" %></h2>
+                                      <hr style="width:80%; margin-left:10%;">
+                                      <p><%= truncate(l.description, length: 150) %></p>
+                                  </div>
+                                      <div class="refolio-share-buttons">
+                                          <!-- Facebook -->
+                                          <a href="http://www.facebook.com/sharer.php?u=http://www.nuvuthemes.com/ovogallery/yacht-store/" target="_blank" class="ref-facebook"><span class="icon-facebook"></span></a>
+
+                                          <span class="icon-facebook"></span>
+                                          <%= link_to '<span class="icon-facebook"></span>'.html_safe, root_path, class: "ref-facebook" %>
+                                          
+                                          <!-- Twitter -->
+                                          <a href="http://twitter.com/share?url=http://www.nuvuthemes.com/ovogallery/yacht-store/&amp;text=Yacht%20Store" target="_blank" class="ref-twitter"><span class="icon-twitter"></span></a>
+
+                                          <!-- Google+ -->
+                                          <a href="https://plus.google.com/share?url=http://www.nuvuthemes.com/ovogallery/yacht-store/" target="_blank" class="ref-google"><span class="icon-googleplus"></span></a>
+                                      </div>
+                              </div>
+                          <% end %>
+
+                      </div> <!-- end refoliogallery -->
+              </div>              
+          </div><!--end post-entry-->
+        <!--end content-->
+      </div>                     
+</div><!--end container-->
+
+ <%= render "layouts/footer" %>
+
+

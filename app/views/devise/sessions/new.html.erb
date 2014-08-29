@@ -1,0 +1,71 @@
+
+
+  <%# if devise_mapping.rememberable? -%>
+	<%# f.check_box :remember_me %> <%# f.label :remember_me %>
+  <%# end -%>
+
+ <section class="colorBg1 active" id="demo1" data-panel="first" style="padding-top:70px;">
+            <div class="login-form-section">
+                <div class="login-content  animated bounceIn" data-animation="bounceIn">
+               		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                        <div class="section-title" style="text-align:center;">
+                            <h3>LogIn to your Account</h3>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-user icon-color"></i></span>
+                                <%= f.email_field :email, autofocus: true,class: "form-control", placeholder:"Username" %>
+                            </div>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-key icon-color"></i></span>
+                                <%= f.password_field :password, autocomplete: "off",class: "form-control", placeholder: "Password" %>
+                            </div>
+                        </div>
+                        <div class="login-form-action clearfix">
+                            <div class="checkbox pull-left">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" checked name="iCheck">
+                                </div>
+                                <span class="checkbox-text pull-left">&nbsp;Remember Me</span>
+                            </div>
+                            <%= f.submit 'login', class: "btn btn-success pull-right green-btn" %>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="login-form-links link1 " data-animation="fadeInLeftBig" data-animation-delay=".2s">
+                    <h4 class="blue">Don't have an Account?</h4>
+                    <span>No worry</span>
+                    <%= link_to "Click Here", new_user_registration_path, class: "blue" %>
+                    <span>to Register</span>
+                </div>
+                <div class="login-form-links link2 " data-animation="fadeInRightBig" data-animation-delay=".4s">
+                    <h4 class="green">Forget your Password?</h4>
+                    <span>Dont worry</span>
+                    <%= link_to "Click Here", new_password_path(resource_name),class: "green" %>
+                    <span>to Get New One</span>
+                </div>
+            </div>
+
+    </section>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

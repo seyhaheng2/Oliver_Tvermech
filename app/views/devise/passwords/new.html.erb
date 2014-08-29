@@ -1,0 +1,40 @@
+
+
+
+  
+
+
+
+
+
+
+<section class=" colorBg" id="demo3" data-panel="third">
+        <div class=" container">
+            <br>
+            <br>
+            <br>
+
+            <div class="forgot-password-section animated bounceInLeft" data-animation="bounceInLeft">
+                <div class="section-title" style="text-align: center;">
+                    <h3>Forget Password</h3>
+                </div>
+                <div class="forgot-content">
+                    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                    	<%= devise_error_messages! %>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="fa fa-envelope-o"></i></span>
+                                 <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email Id" %>
+                            </div>
+                        </div>
+                        <div class="forget-form-action clearfix">
+                            <%= link_to '<i class="fa fa-angle-left" style="font-size:15px;font-weight:700;"></i> Back'.html_safe,new_user_session_path, class: "btn btn-success pull blue-btn"  %>
+                            <%= f.submit "Submit", class:"btn btn-success pull-right green-btn" %>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+
+
+        </div>
+    </section>

@@ -1,0 +1,32 @@
+
+  <div class="refoliobuttonwrap ref-tools-full" style="bottom: 0px;padding-bottom:10px;z-index:999;">
+          <div class="refolio_pagination">
+<!--     <a class="active page button numberCircle ref-active-page" href="index.html">1</a>
+    <a class="page button numberCircle " href="page/2/index.html">2</a> -->
+            <%= will_paginate @les,class: "page button" %>
+          </div>
+          <%= link_to "Mobile", root_path, class: "refoliobutton",style: "opacity: 1" %>
+          <%= link_to "Web Programing", root_path, class: "refoliobutton",style: "opacity: 1" %>
+          <%= link_to "Desktop", root_path, class: "refoliobutton",style: "opacity: 1" %>
+          <%= link_to "Network", root_path, class: "refoliobutton",style: "opacity: 1" %>
+            <div class="refoliosizes">
+              <span class="refoliomedium">
+                <%= link_to "Mobile", root_path,style: "opacity: 1;color:#f6f6f6;" %>
+              </span>
+              <span class="refoliomedium">
+                <%= link_to "Web Programing", root_path,style: "opacity: 1;color:#fff;" %>
+              </span>
+              <span class="refoliomedium">
+                <%= link_to "Desktop", root_path,style: "opacity: 1;color:#fff;" %>
+              </span>
+              <span class="refoliomedium">
+                <%= link_to "Network", root_path,style: "opacity: 1;color:#fff;" %>
+              </span>
+            </div>
+            <span class="icon-arrow-down11 toggle-tools"></span>
+            <div class="ref-sorts">
+              <span class="sortbyrating icon-star6"></span>
+              <span class="sortbydate icon-calendar4"></span>
+              <span class="sortbycomments icon-bubbles2"></span>
+            </div>
+      </div>

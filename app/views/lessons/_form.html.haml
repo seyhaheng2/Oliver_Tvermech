@@ -1,0 +1,38 @@
+= form_for @lesson, :html => { :class => "form-horizontal" } do |f|
+  -if @lesson.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@lesson.errors.count, "error")} prohibited this lesson from being saved:"
+
+      %ul
+        - @lesson.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :name, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.text_field :name, :class => 'form-control'
+  .form-group
+    = f.label :image, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.file_field :image
+  .form-group
+    = f.label :video, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.text_field :video, :class => 'form-control'
+  .form-group
+    = f.label :duration, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.text_field :duration, :class => 'form-control'
+  .form-group
+    = f.label :description, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.text_area :description, :class => 'form-control'
+  .form-group
+    = f.label :course, :class => 'col-sm-1 control-label'
+    .col-sm-10
+      = f.select :course_id, Course.all.map {|coz| [coz.name, coz.id]}, :class => 'form-control'
+
+  .form-group
+    .col-sm-offset-1.col-sm-10
+      = f.submit :class => 'btn btn-primary'
