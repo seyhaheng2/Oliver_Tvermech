@@ -3,7 +3,7 @@
   <%# if devise_mapping.rememberable? -%>
 	<%# f.check_box :remember_me %> <%# f.label :remember_me %>
   <%# end -%>
-
+<div class="eternity-form">
  <section class="colorBg1 active" id="demo1" data-panel="first" style="padding-top:70px;">
             <div class="login-form-section">
                 <div class="login-content  animated bounceIn" data-animation="bounceIn">
@@ -24,12 +24,12 @@
                             </div>
                         </div>
                         <div class="login-form-action clearfix">
-                            <div class="checkbox pull-left">
+                           <!--  <div class="checkbox pull-left">
                                 <div class="custom-checkbox">
                                     <input type="checkbox" checked name="iCheck">
                                 </div>
                                 <span class="checkbox-text pull-left">&nbsp;Remember Me</span>
-                            </div>
+                            </div> -->
                             <%= f.submit 'login', class: "btn btn-success pull-right green-btn" %>
                         </div>
                     <% end %>
@@ -50,7 +50,7 @@
 
     </section>
    
-
+</div>
 
 
 

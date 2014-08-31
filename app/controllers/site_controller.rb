@@ -6,7 +6,12 @@ class SiteController < ApplicationController
   end
 
   def index
-  	@les = Lesson.paginate(:page => params[:page], :per_page => 11).order("created_at desc")
+  	qry = params[:query]
+  	if qry.to_s == ''
+		  @les = Lesson.all.paginate(:page => params[:page], per_page: 6)
+  	else
+		  @les = Lesson.text_search(qry).paginate(:page => params[:page], per_page: 12)
+  	end
   end
 
   def show

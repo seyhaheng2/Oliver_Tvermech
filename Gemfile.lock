@@ -58,6 +58,7 @@ GEM
     execjs (2.2.1)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
+    gravtastic (3.2.6)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -156,6 +157,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   font-awesome-rails
+  gravtastic
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

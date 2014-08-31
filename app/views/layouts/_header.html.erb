@@ -3,25 +3,37 @@
     <div class="scroll-cont mCustomScrollbar _mCS_1" style="height: 90%;">
         <div class="mCustomScrollBox mCS-dark-thin" id="mCSB_1" style="position:relative; height:100%; overflow:hidden; max-width:100%;">
 
-            <div class="mCSB_container" style="position: relative; top: 0px; height: 300px;">
+            <div class="mCSB_container">
                 <ul class="topnav">
                     <li id="stm-ebook" class="isactive">
                         <%= link_to '<span class="fa fa-home" style="font-size:17px;width:20px;"></span> hOme'.html_safe, root_path, class: "stm-nav-item" %>
                     </li>
                     <li id="stm-weg" class="">
-                        <%= link_to '<span class="fa fa-lightbulb-o" style="font-size:18px;width:20px;"></span> cOurse'.html_safe, root_path, class: "stm-nav-item" %>
+                        <%= link_to '<span class="fa fa-lightbulb-o" style="font-size:18px;width:20px;"></span> cOurse'.html_safe, site_contact_path, class: "stm-nav-item" %>
                     </li>
                     <li id="stm-World" class="">
-                        <%= link_to '<span class="fa fa-envelope-o" style="font-size:15px;width:20px;"></span> aBout'.html_safe, root_path, class: "stm-nav-item" %>
+                        <%= link_to '<span class="fa fa-envelope-o" style="font-size:15px;width:20px;"></span> aBout'.html_safe, site_about_path, class: "stm-nav-item" %>
                     </li>
+                    <% if user_signed_in? %>
+                        <li>
+                        <%= link_to '<span class="fa fa-sign-out" style="font-size:17px;width:20px;"></span> lOg Out'.html_safe, destroy_user_session_path, method: :delete, style: "text-align:center;" %>
+                        </li>
+                             <span class="control-image">
+                            <%= image_tag current_user.gravatar_url,style: "border-radius:100px;margin-top:5px;display:flex;align-items:center;" %>
+                            </span>
+                            
+
+                    <% else %>
                     <li id="stm-grill" class="">
                         <%= link_to '<span class="fa fa-lock" style="font-size:17px;width:20px;"></span> lOgin'.html_safe, user_session_path, class: "stm-nav-item" %>
                     </li>
+                    <% end %>
                 </ul>
             </div>
-
-             <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Ftvermech&amp;width=246&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false&amp;appId=1468225413421642" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:246px; height:258px;" allowTransparency="true"></iframe>
-
+            <% if user_signed_in? %>
+            <% else %>
+            
+            <% end %>
 
             <div class="mCSB_scrollTools" style="position: absolute; display: block;">
                 <a class="mCSB_buttonUp" oncontextmenu="return false;"></a>
@@ -37,3 +49,103 @@
 
     </div>
 </div>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("input").iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                increaseArea: '20%' // optional
+            });
+            $(".dark input").iCheck({
+                checkboxClass: 'icheckbox_polaris',
+                increaseArea: '20%' // optional
+            });
+            $(".form-control").focus(function () {
+                $(this).closest(".textbox-wrap").addClass("focused");
+            }).blur(function () {
+                $(this).closest(".textbox-wrap").removeClass("focused");
+            });
+
+            //On Scroll Animations
+
+
+            if ($(window).width() >= 968 && !Modernizr.touch && Modernizr.cssanimations) {
+
+                $("body").addClass("scroll-animations-activated");
+                $('[data-animation-delay]').each(function () {
+                    var animationDelay = $(this).data("animation-delay");
+                    $(this).css({
+                        "-webkit-animation-delay": animationDelay,
+                        "-moz-animation-delay": animationDelay,
+                        "-o-animation-delay": animationDelay,
+                        "-ms-animation-delay": animationDelay,
+                        "animation-delay": animationDelay
+                    });
+
+                });
+                $('[data-animation]').waypoint(function (direction) {
+                    if (direction == "down") {
+                        $(this).addClass("animated " + $(this).data("animation"));
+
+                    }
+                }, {
+                    offset: '90%'
+                }).waypoint(function (direction) {
+                    if (direction == "up") {
+                        $(this).removeClass("animated " + $(this).data("animation"));
+
+                    }
+                }, {
+                    offset: $(window).height() + 1
+                });
+            }
+
+            //End On Scroll Animations
+
+
+            $(".main-nav a[href]").click(function () {
+                var scrollElm = $(this).attr("href");
+
+                $("html,body").animate({ scrollTop: $(scrollElm).offset().top }, 500);
+
+                $(".main-nav a[href]").removeClass("active");
+                $(this).addClass("active");
+            });
+
+
+
+
+            if ($(window).width() > 1000 && !Modernizr.touch) {
+                var options = {
+                    $menu: ".main-nav",
+                    menuSelector: 'a',
+                    panelSelector: 'section',
+                    namespace: '.panelSnap',
+                    onSnapStart: function () { },
+                    onSnapFinish: function ($target) {
+                        $target.find('input:first').focus();
+                    },
+                    directionThreshold: 50,
+                    slideSpeed: 200
+                };
+                $('body').panelSnap(options);
+
+            }
+
+            $(".colorBg a[href]").click(function () {
+                var scrollElm = $(this).attr("href");
+
+                $("html,body").animate({ scrollTop: $(scrollElm).offset().top }, 500);
+
+                return false;
+            });
+
+
+           
+
+        });
+    </script>

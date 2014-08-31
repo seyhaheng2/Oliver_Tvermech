@@ -12,6 +12,7 @@ gem 'font-awesome-rails'
 gem 'masonry-rails'
 gem 'will_paginate'
 gem 'pg_search'
+gem 'gravtastic'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets

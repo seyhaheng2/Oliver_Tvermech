@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :courses
 
   devise_for :users
-  get 'site/about'
+  get 'site/about', path: "about"
 
   get 'site/contact'
 
-  get 'site/index'
+  get 'site/index', path: "home"
 
   get 'site/show'
 

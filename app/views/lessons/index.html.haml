@@ -12,7 +12,6 @@
         %th Duration
         %th Description
         %th Course
-        %th User
         %th
         %th
         %th
@@ -25,8 +24,7 @@
           %td= lesson.video
           %td= lesson.duration
           %td= lesson.description
-          %td= lesson.course
-          %td= lesson.user
+          %td= lesson.course.name
           %td= link_to 'Show', lesson
           %td= link_to 'Edit', edit_lesson_path(lesson)
           %td= link_to 'Destroy', lesson, :data => { confirm: 'Are you sure?' }, :method => :delete

@@ -13,20 +13,6 @@
  *= require_tree .
  *= require font-awesome
  *= require masonry/transitions
- *= require select2
- *= require select2-bootstrap
- 
-
-*= require 'masonry/basic'
-*= require 'masonry/centered'
-*= require 'masonry/fluid'
-*= require 'masonry/gutters'
-*= require 'masonry/infinitescroll'
-*= require 'masonry/right-to-left'
-*= require 'masonry/transitions'
-
-
-
  *= require_self
  */
 
@@ -66,7 +52,7 @@ footer, header, hgroup, menu, nav, section {
 ----------------------------------------------- */
 
 body {
-	padding: 0 2em;
+padding: 0 1em;
 background-attachment:fixed!important;
 }
 #page {

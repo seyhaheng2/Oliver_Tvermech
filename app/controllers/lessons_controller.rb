@@ -28,6 +28,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
+        format.js
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
       else
